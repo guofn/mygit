@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		.list_ul{}
+		.list_ul li{float: left;padding: 3px 15px;list-style: none;background-color: silver;cursor: pointer;border-bottom: 0px solid #222;position: relative;transition: .1s all linear;}
+		.list_ul li::before{content: '';position: absolute;top: 0;left: 100%;width: 0;height: 100%;border-bottom: 2px solid #222;transition: .2s all;}
+		.list_ul li:hover::before{left: 0;width: 100%;}
+		.list_ul li:hover ~ li::before{left: 0;}
+		.list_ul li:active{background-color: #000;color: #fff;transition: 0s all;}
+	</style>
+	<body>
+		<ul class="list_ul">
+			<li>1</li>
+			<li>22</li>
+			<li>333</li>
+			<li>4444</li>
+			<li>55555</li>
+			<li>55555</li>
+			<li>55555</li>
+			<li>55555</li>
+			<li>55555</li>
+		</ul>
+	</body>
+	<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+</html>

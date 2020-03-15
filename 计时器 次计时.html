@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	
+  <title>计时器</title>
+ 	<style type="text/css">
+ 	*{
+ 		font-family: "微软雅黑";
+ 	}
+ 		.time{
+ 			margin: 0 auto;
+ 			margin-top: 60px;
+ 		}
+ 		.time>div{
+ 			width: 520px;
+ 			padding: 30px 40px;
+ 			margin: 0 auto;
+ 			margin-bottom: 30px;
+ 			border: 1.5px solid black;
+ 			border-radius: 4px;
+    		box-shadow: 0 2px 2px rgba(10,16,20,.24),0 0 2px rgba(10,16,20,.12);
+ 		}
+ 		.time input{
+ 			font-size: 60px;
+ 			font-weight: bold;
+ 			width: 165px;
+ 			border: none;
+ 			text-align: center;
+ 			text-shadow: 1.5px 1.5px 1.5px #999;
+ 		}
+ 		.time span{
+ 			padding: 10px 20px;
+ 			font-weight: bold;
+		    border:1px solid #333;
+			box-shadow: 0 1px 2px #8b8b8b inset,0 -1px 0 #3d3d3d inset,0 -2px 3px #8b8b8b inset;
+			background: -webkit-linear-gradient(top,#656565,#4c4c4c);
+			background: -moz-linear-gradient(top,#656565,#4a4a4a);
+			background: linear-gradient(top,#656565,#4a4a4a);
+			color: white;
+ 		}
+ 		.clitime{
+ 			margin: 0 auto;
+ 			margin-top: 30px;
+ 			border: 1.5px solid black;
+ 			padding: 15px 30px;
+ 			padding-top: 0;
+ 			width: 620px;
+ 			position: relative;
+ 			border-radius: 4px;
+ 		}
+ 		.clitime h2{
+ 			padding: 10px 15px;
+ 			border-bottom: 1px solid black;
+ 			text-shadow: 1px 1px 0px #999;
+ 		}
+ 		.sapn{
+ 			position: absolute;
+ 			right: 45px;
+ 			cursor: pointer;
+ 			font-weight: 100;
+ 			display: none;
+ 		}
+ 		.clitime h2:hover .sapn{
+ 			display: inline-block;
+ 		}
+ 	</style>
+</head>
+<body>
+	<div class="time" style="text-align: center">
+	  <div>
+	  	<input type="text" onkeydown="return dis(event)" class="timetext" value="分   :" readonly>
+	  	<input type="text" onkeydown="return dis(event)" class="timetext" value=" 秒   :" readonly>
+	  	<input type="text" onkeydown="return dis(event)" class="timetext" value="毫秒" readonly>
+	  </div>
+	  
+	  <span type="button" onclick="start()">开始</span>
+	  <span type="button" onclick="stop()">暂停</span>
+	  <span type="button" onclick="clitime()">次计时</span>
+	  <span type="button" onclick="Reset()">重置</span>
+	</div>
+	<div id="clitime">
+		
+	</div>
+	
+	<script>
+    var hour,minute,second;//时 分 秒
+    hour=minute=second=0;//初始化
+    var millisecond=0;//毫秒
+    var ii = true;
+    var num = 0;
+    var int;
+    function Reset()//重置
+    {
+      window.clearInterval(int);
+      millisecond=hour=minute=second=0;
+      document.getElementsByClassName('timetext')[0].value='分   :';
+      document.getElementsByClassName('timetext')[1].value=' 秒   :';
+      document.getElementsByClassName('timetext')[2].value='毫秒';
+      Clitime.innerHTML='';
+      ii = true;
+      num = 0;
+      Clitime.className='';
+    }
+  
+    function start()//开始
+    {
+      if(ii){
+      	int=setInterval(timer,50);
+      	ii = !ii;
+      }
+    }
+  
+    function timer()//计时
+    {
+      millisecond=millisecond+50;
+      if(millisecond>=1000)
+      {
+        millisecond=0;
+        second=second+1;
+      }
+      if(second>=60)
+      {
+        second=0;
+        minute=minute+1;
+      }
+      document.getElementsByClassName('timetext')[0].value=minute+'   :';
+      document.getElementsByClassName('timetext')[1].value=second+'   :';
+      document.getElementsByClassName('timetext')[2].value=millisecond;
+    }
+    var Clitime=document.querySelector('#clitime')
+    var changeNum  =  ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九','十'];
+  	//次计时
+  	function clitime(){
+  		if(second != 0 || millisecond != 0){
+  			num ++;
+	  		var tr=document.createElement('h2');
+	  		var li=document.createElement('span');
+	  		if(num < 11){
+		  		if(minute != 0){
+		  			tr.innerHTML = changeNum[num]+"、                   "+  minute+' 分   :   '+second+' 秒   :   '+millisecond+' 毫秒';
+		  		}else{
+		  			tr.innerHTML = changeNum[num]+"、                   "+  second+' 秒   :   '+millisecond+' 毫秒';
+		  		}
+		  		li.innerHTML = 'x';
+		  		tr.appendChild(li).className = 'sapn';
+		  		li.onclick=function(){
+		  			Clitime.removeChild(this.parentNode)
+		  			if(Clitime.children.length == 0){
+		  				num = 0;
+		  				Clitime.className='';
+		  			}
+		  		}
+		  		Clitime.appendChild(tr);
+		  		Clitime.className='clitime';
+		  	}
+  		}
+  	}
+  	
+    function stop()//暂停
+    {
+    	if(!ii){
+      	 window.clearInterval(int);
+      	 ii = !ii;
+      }
+     
+    }
+    
+    
+    
+    document.onkeydown=function(event){
+	     var e = event || window.event || arguments.callee.caller.arguments[0];
+	      if(e && e.keyCode==13){ // enter 键
+	      	clitime()
+	     }
+	      if(e && e.keyCode==32){ // enter 键
+	      	if(ii){
+	      		start()
+	      	}
+	     }
+	 };
+  </script>
+</body>
+</html>

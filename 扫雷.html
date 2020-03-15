@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{padding: 0;margin: 0;}
+			div{
+				margin: 10px auto;
+				text-align: center;
+				font-family: "微软雅黑";
+			}
+			table{
+				margin: 10px auto;
+				border-spacing: 0;
+			}
+			td{
+				width: 18px;
+				height: 18px;
+				background: #c8c8c8;
+				border: 1.5px solid;
+				border-color: #fff #545252 #545252 #fff;
+				cursor: pointer;
+				font-size: 12px;
+				font-weight: bold;
+				text-align: center;
+			}
+			.main{
+				background: url(img/logo.svg) no-repeat;
+				background-size: 100% 100%;
+			}
+			.qi{
+				background: url(img/logo.png) no-repeat;
+				background-size: 100% 100%;
+				background-color: #c8c8c8;
+			}
+			.active{background-color: #0000FF;}
+			.c1{
+				color: blue;
+				background-color: white;
+			}
+			.c2{
+				color: green;
+				background-color: white;
+			}
+			.c3{
+				color: #FF8C00;
+				background-color: white;
+			}
+			.c4{
+				color: blueviolet;
+				background-color: white;
+			}
+			.c5{
+				color: darkorange;
+				background-color: white;
+			}
+			.c6{
+				color: black;
+				background-color: white;
+			}
+			.c7{
+				color: #FF0000;
+				background-color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div>
+				<button class="active">初级</button>
+				<button>中级</button>
+				<button>高级</button>
+				<button class="">重开开始</button>
+			</div>
+			
+			<div id="tabBox"></div>
+			
+			<div>剩余雷数：<span class="sLei"></span></div>
+		</div>
+		<script type="text/javascript">
+			function Min(tr,td,tabNum){
+				this.tr = tr; //行
+				this.td = td;//列
+				this.tabNum = tabNum;//雷的数量
+				this.cloXy = [];// 存储dom
+				this.xyQauery = [];// 存储格子x，y坐标
+				this.getmo = false;
+			};
+			
+			//随机雷坐标
+			Min.prototype.cLoxy=function(){
+				var query = new Array(this.tr * this.td);
+				for(var i = 0;i<query.length;i ++){
+					query[i] = i;
+				}
+				query.sort(function(){return 0.5-Math.random()})
+				return query.slice(0,this.tabNum);
+			}
+			
+			//获取格子信息坐标
+			Min.prototype.bJlei=function(){
+				var n = this.cLoxy();
+				var l = 0;
+				for(var i = 0;i < this.tr;i++){
+					this.xyQauery[i] = [];
+					for(var j = 0;j < this.td;j ++){
+						if (n.indexOf(++l)!=-1){ //对比坐标 相同则是雷
+							this.xyQauery[i][j] = {type:'main',x:j,y:i};
+						}else{
+							this.xyQauery[i][j] = {type:'num',x:j,y:i,value:0};
+						}
+						
+					}
+				}
+				this.upData();
+				this.tabLe();
+			};
+			
+			//创建格子
+			Min.prototype.tabLe=function(){
+				var table = document.createElement('table');
+				table.oncontextmenu=function(){return false};
+				document.querySelector('.sLei').innerHTML = this.tabNum;//雷的数量
+				var This = this;
+				for(var i = 0;i < this.tr;i ++){
+					var tr = document.createElement('tr');
+					this.cloXy[i] = [];
+					for(var j = 0;j < this.td;j ++){
+						var td = document.createElement('td');
+						td.post=[i,j]; //存储格子对应行与列的位置
+						td.onmousedown=function (){
+							This.play(event,this);//This 指向实例对象  this 指向dom 
+						}
+						this.cloXy[i][j] = td;
+//						if(this.xyQauery[i][j].type == 'main'){
+//							td.className = 'main'
+//						}else if(this.xyQauery[i][j].type == 'num'){
+//							td.innerHTML = this.xyQauery[i][j].value
+//						}
+						tr.appendChild(td);
+					}
+					table.appendChild(tr);
+				}
+				document.querySelector('#tabBox').innerHTML = '';
+				document.querySelector('#tabBox').appendChild(table);
+			};
+			
+			//找到周围格子
+			Min.prototype.cLnum=function(xyQauery){
+				var x = xyQauery.x;
+				var y = xyQauery.y;
+				var retu = [];//找到的格子的坐标 并返回二维数组；
+				for (var i = x - 1; i <= x +1;i ++){ //通过周围坐标 循环九宫格
+					for (var j = y - 1; j <= y +1; j++){
+						if(
+							i < 0 || i > this.td -1 ||//格子超出左 右边范围
+							j < 0 || j > this.tr -1 ||//格子超出上 下边范围
+							(i == x && j == y) || this.xyQauery[j][i].type == 'main' //格子是自身 或者周围格子是雷
+						){
+							continue;
+						}
+						retu.push([j,i]);
+					}
+				}
+				return retu;
+			}
+			
+			//更新数字
+			Min.prototype.upData=function(){
+				for(var i = 0;i < this.tr;i ++){
+					for(var j = 0;j < this.td;j ++){
+						//只更新雷周围的数字
+						if(this.xyQauery[i][j].type == 'num'){
+							continue;
+						}
+						var num = this.cLnum(this.xyQauery[i][j])
+						for(var k = 0;k < num.length;k++){
+							this.xyQauery[num[k][0]][num[k][1]].value += 1;//数字增加
+						}
+					}
+				}
+			}
+			
+			//判断点到的是雷还是数字
+			Min.prototype.play=function(ev,obj){
+				if(ev.which == 1 && obj.className !=='qi'){//点击左键  标注小旗的不可点击
+					var This = this;
+					var curXyQauery = this.xyQauery[obj.post[0]][obj.post[1]];
+					var cl = ['c1','c2','c3','c4','c5','c6','c7']
+					//console.log(curXyQauery)
+					if(curXyQauery.type == 'num'){//点到的是数字
+						obj.innerHTML = curXyQauery.value;
+						obj.className = cl[curXyQauery.value];
+						if(curXyQauery.value == 0){//如果点到0 
+							obj.innerHTML = '';
+							function getall(xyQauery){
+								var aroud = This.cLnum(xyQauery);
+								for(var i = 0;i < aroud.length;i ++){
+									var x = aroud[i][0];
+									var y = aroud[i][1];
+									This.cloXy[x][y].className = cl[This.xyQauery[x][y].value];
+									if(This.xyQauery[x][y].value == 0){
+										if(!This.xyQauery[x][y].check){
+											This.xyQauery[x][y].check = true;
+											getall(This.xyQauery[x][y]);
+										}
+									}else{
+									This.cloXy[x][y].innerHTML = This.xyQauery[x][y].value;
+									}
+								}
+								
+								
+							};
+							getall(curXyQauery);
+						}
+					}else{//或者点到雷
+						this.getMover(obj);
+						obj.className = 'main';
+					}
+				}
+				if(ev.which == 3){//点击右键
+					if(obj.className && obj.className != 'qi'){//点击的格子是否有class
+						return;
+					}
+					obj.className=obj.className=='qi'?'':'qi';//如果点击的class不是 pi 或者是空 那就给一个pi
+					
+					if(this.xyQauery[obj.post[0]][obj.post[1]].type == 'main'){//判断小红旗背后是否都是雷
+						this.getmo = true;
+					}else{
+						this.getmo = false;
+					}
+					if(obj.className=='qi'){
+						document.querySelector('.sLei').innerHTML = --this.tabNum;//赋值剩余雷数
+					}else{
+						document.querySelector('.sLei').innerHTML = ++this.tabNum;//赋值剩余雷数
+					}
+					if(this.tabNum == 0){//剩余雷数标旗完后 判断 是否正确
+						if(this.getmo){
+							alert('恭喜您，游戏通过！')
+						}else{
+							this.getMover();
+						}
+					}
+				}
+			}
+			
+			//点到雷 显示所有雷
+			Min.prototype.getMover=function(clickTd){
+				for(var i = 0;i < this.tr;i ++){
+					for(var j = 0; j < this.td; j++){
+						if(this.xyQauery[i][j].type == 'main'){
+							this.cloXy[i][j].className = 'main';
+						}
+						this.cloXy[i][j].onmousedown = null;
+					}
+				}
+				if(clickTd){
+					clickTd.style.backgroundColor = '#f00';
+				}
+				alert('游戏失败！')
+			}
+			
+			//按钮功能
+			var btn = document.querySelectorAll('button');
+			var arr = [[9,9,10],[16,16,40],[28,28,99]];
+			var lo = 0;
+			for(let i=0;i<btn.length-1;i++){
+				btn[i].onclick=function(){
+					btn[lo].className = '';
+					this.className = 'active';
+					lo = i;
+					pLay = new Min(...arr[i]);
+					pLay.bJlei();
+				}
+			}
+			btn[0].onclick();//初始化
+			btn[3].onclick=function(){
+				pLay.bJlei();
+			}
+		</script>
+		
+		<div class="div1"></div>
+	</body>
+</html>

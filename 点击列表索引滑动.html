@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.xy_dian_two_bos {
+				position: relative;
+				width: 95%;
+				display: inline-block;
+			}
+			
+			.xy_dian_two_scoll {
+				height: 560px;
+				background-color: #1C2242;
+				margin-top: 16px;
+				height: 560px;
+				overflow: hidden;
+				overflow: auto;
+				border: 1px solid #4e5377;
+			}
+			
+			.xy_dian_two_scoll::-webkit-scrollbar {
+				width: 2px;
+				height: 4px;
+			}
+			
+			.xy_dian_two_scoll::-moz-scrollbar {
+				width: 2px;
+				height: 4px;
+			}
+			
+			.xy_dian_two_scoll ul {
+				width: 100%;
+				height: auto;
+				text-align: left;
+			}
+			
+			.xy_dian_two_scoll>ul li {
+				line-height: 21px;
+			}
+			
+			.xy_dian_two_scoll>ul>li {
+				margin: 10px 0 10px 10px;
+			}
+			
+			.xy_dian_two_scoll>ul>li>div {
+				width: 20px;
+				height: 20px;
+				line-height: 22px;
+				border-radius: 50%;
+				background-color: #989898;
+				color: #F2F2F2;
+				font-size: 13.5px;
+				text-align: center;
+			}
+			
+			.xy_dian_two_scoll>ul>li>ol {
+				width: 96%;
+			}
+			
+			.xy_dian_two_scoll>ul>li>ol>li {
+				margin: 5px 15px 0 0;
+				display: inline-block;
+				font-size: 12px;
+				cursor: pointer;
+			}
+			
+			.xy_dian_two_index {
+				position: absolute;
+				right: 0;
+				top: 16px;
+				width: 25px;
+				margin-right: 3px;
+			}
+			
+			#xy_dian_two_index_ul>div {
+				font-size: 12.5px;
+				color: #AFAFAF;
+				line-height: 19px;
+				text-align: center;
+				cursor: pointer;
+			}
+			
+			.xy_dian_two_index li:hover {
+				opacity: 0.5;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="xy_dian_two_bos">
+			<div class="xy_dian_two_index">
+				<ul id="xy_dian_two_index_ul">
+					<div>A</div>
+					<div>B</div>
+					<div>C</div>
+					<div>D</div>
+					<div>E</div>
+					<div>F</div>
+					<div>G</div>
+					<div>H</div>
+					<div>I</div>
+					<div>J</div>
+					<div>K</div>
+					<div>L</div>
+					<div>M</div>
+					<div>N</div>
+					<div>O</div>
+					<div>P</div>
+					<div>Q</div>
+					<div>R</div>
+					<div>S</div>
+					<div>T</div>
+					<div>U</div>
+					<div>V</div>
+					<div>W</div>
+					<div>X</div>
+					<div>Y</div>
+					<div>Z</div>
+				</ul>
+			</div>
+			<div class="xy_dian_two_scoll">
+				<ul class="xy_dian_two_scoll_ul">
+					<li>
+						<div>A</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_A">
+							<li class="shop las xy_dian_two_scoll_li_eee" shop_id="26224912" data=",,安琪米兰婚纱礼服">安琪米兰婚纱礼服</li>
+							<li class="shop las xy_dian_two_scoll_li_eee" shop_id="26224910" data=",,阿锋琴行">阿锋琴行</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224911" data=",,艾美">艾美</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="81454721" data=",,奥佳科技">奥佳科技</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224913" data=",,澳邦威音响">澳邦威音响</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="101102806" data=",,阿珍精品店">阿珍精品店</li>
+						</ol>
+					</li>
+					<li>
+						<div>B</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_B">
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="58153810" data=",,北京国网鹰达文化传播有限公司">北京国网鹰达文化传播有限公司</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="107679268" data=",,博银电脑">博银电脑</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224914" data=",,柏宏电脑">柏宏电脑</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="57984947" data=",,博轩电子科技">博轩电子科技</li>
+						</ol>
+					</li>
+					<li>
+						<div>C</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_C">
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224919" data=",,潮头堡">潮头堡</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224917" data=",,朝日汽车导航">朝日汽车导航</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224918" data=",,潮人会所">潮人会所</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224916" data=",,超盛科技">超盛科技</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224906" data=",,3c电脑科技经营部">3c电脑科技经营部</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224921" data=",,春桃绮时装档">春桃绮时装档</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224920" data=",,穿越百度">穿越百度</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="108900700" data=",,陈氏影楼用品">陈氏影楼用品</li>
+						</ol>
+					</li>
+					<li>
+						<div>D</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_D">
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224924" data=",,笛乐琴行">笛乐琴行</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="67733951" data=",,大福汇快餐">大福汇快餐</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224922" data=",,大国贸电子(民族店)">大国贸电子(民族店)</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224925" data=",,独品外貌商">独品外貌商</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224923" data=",,德声琴行">德声琴行</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224907" data=",,d舞元素">d舞元素</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="49995234" data=",,顶联摄影器材">顶联摄影器材</li>
+						</ol>
+					</li>
+					<li>
+						<div>E</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_E">
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224908" data=",,e动力">e动力</li>
+						</ol>
+					</li>
+					<li>
+						<div>F</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_F">
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224932" data=",,富达琴行">富达琴行</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224929" data=",,飞仔时装">飞仔时装</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224934" data=",,富鑫画业">富鑫画业</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224928" data=",,飞信数码">飞信数码</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224926" data=",,飞达科技">飞达科技</li>
+						</ol>
+					</li>
+					<li>
+						<div>G</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_G">
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="74767021" data=",,广州肠粉">广州肠粉</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224938" data=",,广西外文书店">广西外文书店</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224937" data=",,广联">广联</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224936" data=",,古惑仔">古惑仔</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="48903014" data=",,高级便携捷式移动音箱">高级便携捷式移动音箱</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224935" data=",,哥俩好">哥俩好</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224939" data=",,广兴电脑">广兴电脑</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="103103377" data=",,广西星烽音响设备有限公司">广西星烽音响设备有限公司</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224941" data=",,桂生电器商行">桂生电器商行</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224940" data=",,桂美画艺">桂美画艺</li>
+						</ol>
+					</li>
+					<li>
+						<div>H</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_H">
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="13497284" data=",,煌诚电玩">煌诚电玩</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224967" data=",,汇佳笔记本电脑">汇佳笔记本电脑</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224952" data=",,鸿千禧服装">鸿千禧服装</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224948" data=",,红依工艺画卜总汇">红依工艺画卜总汇</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224950" data=",,宏盛时装">宏盛时装</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224946" data=",,恒辉科技">恒辉科技</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224943" data=",,海淘电脑">海淘电脑</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224970" data=",,惠利电脑">惠利电脑</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224961" data=",,华胜科数码音像">华胜科数码音像</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224958" data=",,华华潮流店">华华潮流店</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224957" data=",,华虹电子">华虹电子</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224966" data=",,辉煌科技">辉煌科技</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224951" data=",,宏图画业">宏图画业</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224965" data=",,辉华环球电子配件经营部">辉华环球电子配件经营部</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224947" data=",,弘帆音响">弘帆音响</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="82632038" data=",,海鑫莎">海鑫莎</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="81731318" data=",,海洋电脑">海洋电脑</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224974" data=",,慧鑫电脑">慧鑫电脑</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224956" data=",,华尔电脑">华尔电脑</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224955" data=",,华达时装">华达时装</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224972" data=",,惠威">惠威</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224963" data=",,坏男孩专卖店">坏男孩专卖店</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224944" data=",,合立数码">合立数码</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224959" data=",,华记电脑">华记电脑</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224971" data=",,惠绮办公设备">惠绮办公设备</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="105472312" data=",,华侨相框">华侨相框</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224962" data=",,华夏影楼用品总汇">华夏影楼用品总汇</li>
+						</ol>
+					</li>
+					<li>
+						<div>J</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_J">
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224986" data=",,晶艺水晶相框">晶艺水晶相框</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224982" data=",,金宝音响批发部">金宝音响批发部</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224979" data=",,娇娇服饰">娇娇服饰</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224980" data=",,姐弟名店">姐弟名店</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224976" data=",,嘉琪乐器">嘉琪乐器</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="48696807" data=",,金喇叭音响公司">金喇叭音响公司</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="73898479" data=",,金利音响">金利音响</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224984" data=",,金喜缘婚庆道具">金喜缘婚庆道具</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224978" data=",,建华小电器专卖店">建华小电器专卖店</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224909" data=",,jia88休闲服饰">jia88休闲服饰</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224977" data=",,简尚">简尚</li>
+						</ol>
+					</li>
+					<li>
+						<div>K</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_K">
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="50214385" data=",,k歌先锋">k歌先锋</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="72163524" data=",,凯子服装">凯子服装</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224988" data=",,科泰电子">科泰电子</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224987" data=",,凯乐乐器">凯乐乐器</li>
+						</ol>
+					</li>
+					<li>
+						<div>L</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_L">
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225000" data=",,隆兴服装">隆兴服装</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224999" data=",,隆腾体育">隆腾体育</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="82675389" data=",,乐声灯光音响">乐声灯光音响</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="81259470" data=",,老蔡影楼用品商行">老蔡影楼用品商行</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224994" data=",,亮峰科技">亮峰科技</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224993" data=",,联兴电器经营部">联兴电器经营部</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="74043490" data=",,浪麒声美特">浪麒声美特</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225001" data=",,罗敏华精品乐器批发销售中心">罗敏华精品乐器批发销售中心</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224991" data=",,莲姐潮流">莲姐潮流</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="74085504" data=",,亮格雅">亮格雅</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224990" data=",,力讯科技">力讯科技</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="72426026" data=",,旅游百事通(民族商场门市部)">旅游百事通(民族商场门市部)</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26224995" data=",,靓士服饰">靓士服饰</li>
+						</ol>
+					</li>
+					<li>
+						<div>M</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_M">
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225003" data=",,美艺画苑">美艺画苑</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="81117487" data=",,mj003音乐教室">mj003音乐教室</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="62128916" data=",,民族窗帘布艺城">民族窗帘布艺城</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="82782326" data=",,MP3" mp5="" u盘="">MP3 MP5 U盘</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="82090164" data=",,民族伞帽店">民族伞帽店</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="74034750" data=",,民族钟表经营部">民族钟表经营部</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="82329840" data=",,美景画艺">美景画艺</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="108912671" data=",,帽饰品店">帽饰品店</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225008" data=",,魔声数码">魔声数码</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225006" data=",,名流时装">名流时装</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225005" data=",,民族万胜电器电池经营部">民族万胜电器电池经营部</li>
+						</ol>
+					</li>
+					<li>
+						<div>N</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_N">
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225009" data=",,宁达电脑安防科技">宁达电脑安防科技</li>
+						</ol>
+					</li>
+					<li>
+						<div>O</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_O">
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="81412086" data=",,欧凌海虹电器">欧凌海虹电器</li>
+						</ol>
+					</li>
+					<li>
+						<div>P</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_P">
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225012" data=",,萍姐电脑">萍姐电脑</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225011" data=",,品臻电子经营部">品臻电子经营部</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="82159201" data=",,朋友音响">朋友音响</li>
+						</ol>
+					</li>
+					<li>
+						<div>Q</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_Q">
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225019" data=",,群声音响器材经营部">群声音响器材经营部</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225016" data=",,前八站">前八站</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="82474387" data=",,奇宁画业">奇宁画业</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225014" data=",,琦翔数码科技">琦翔数码科技</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="49486370" data=",,前卫站时尚男装">前卫站时尚男装</li>
+						</ol>
+					</li>
+					<li>
+						<div>R</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_R">
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225022" data=",,如意服饰">如意服饰</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225021" data=",,仁和牛仔">仁和牛仔</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225020" data=",,热火时尚太阳眼镜">热火时尚太阳眼镜</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="81561223" data=",,锐能万燕">锐能万燕</li>
+						</ol>
+					</li>
+					<li>
+						<div>S</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_S">
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="27249691" data=",,首平文具(民族商场店)">首平文具(民族商场店)</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225028" data=",,盛辉男装">盛辉男装</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225031" data=",,顺顺服装">顺顺服装</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225029" data=",,诗情画意">诗情画意</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225030" data=",,舒逸服饰">舒逸服饰</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="71053062" data=",,声浪音响设备安装有限责任公司">声浪音响设备安装有限责任公司</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225027" data=",,盛红电脑">盛红电脑</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225026" data=",,圣保罗专业音响设备">圣保罗专业音响设备</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225025" data=",,声美乐电器">声美乐电器</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="82271517" data=",,时尚阁">时尚阁</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225024" data=",,声光艺音响">声光艺音响</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="108744513" data=",,数源电脑科技">数源电脑科技</li>
+							<li class="shop las xy_dian_two_scoll_li_eee" shop_id="26225023" data=",,善之批发店">善之批发店</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="73714070" data=",,帅凯服饰">帅凯服饰</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="103167012" data=",,尚艺相框">尚艺相框</li>
+						</ol>
+					</li>
+					<li>
+						<div>T</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_T">
+							<li class="shop las xy_dian_two_scoll_li_eee" shop_id="101485850" data=",,同鑫家电">同鑫家电</li>
+							<li class="shop las xy_dian_two_scoll_li_eee" shop_id="82738391" data=",,TENDA">TENDA</li>
+						</ol>
+					</li>
+					<li>
+						<div>W</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_W">
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225034" data=",,万向琴行">万向琴行</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225039" data=",,唯爱">唯爱</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225041" data=",,我型我秀">我型我秀</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225037" data=",,旺达电子器材批发部">旺达电子器材批发部</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225036" data=",,王斌相框">王斌相框</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="74686157" data=",,维尚">维尚</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="82370733" data=",,万利达音响">万利达音响</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225033" data=",,万宏画业">万宏画业</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="106924785" data=",,万众电脑店">万众电脑店</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225038" data=",,旺明时装店">旺明时装店</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="49133618" data=",,威士邦影音新干线">威士邦影音新干线</li>
+						</ol>
+					</li>
+					<li>
+						<div>X</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_X">
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="68121756" data=",,嚮茶SHINY" tea(人民东路店)="">嚮茶SHINY TEA(人民东路店)</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225051" data=",,新兴服饰">新兴服饰</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="82967378" data=",,鑫鑫造型">鑫鑫造型</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="58388407" data=",,现代画业">现代画业</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225060" data=",,兴达五金交电经营部">兴达五金交电经营部</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225044" data=",,祥隆电子批发部">祥隆电子批发部</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225059" data=",,星之光舞台灯光音响">星之光舞台灯光音响</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225048" data=",,新潮一族">新潮一族</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225056" data=",,信义服装">信义服装</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225046" data=",,新潮打印机总汇">新潮打印机总汇</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225052" data=",,新兴画坊">新兴画坊</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225057" data=",,星海琴行">星海琴行</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="103727831" data=",,小樊专业维修">小樊专业维修</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="70990245" data=",,X潮C">X潮C</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="48503286" data=",,星空有线电视器材">星空有线电视器材</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225054" data=",,鑫源电器批发部">鑫源电器批发部</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225053" data=",,鑫鸿福电器商行">鑫鸿福电器商行</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225043" data=",,箱包公馆">箱包公馆</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225049" data=",,新程（新发）科技">新程（新发）科技</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225061" data=",,旭升电子">旭升电子</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="41152385" data=",,小栖贡">小栖贡</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="82074520" data=",,星奇电子">星奇电子</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="71877011" data=",,讯窗电脑">讯窗电脑</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225050" data=",,新港电子配件部">新港电子配件部</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="73705388" data=",,新一代靓仔服装店">新一代靓仔服装店</li>
+						</ol>
+					</li>
+					<li>
+						<div>Y</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_Y">
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225066" data=",,依君时装">依君时装</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="58443775" data=",,一心南百">一心南百</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225070" data=",,永红时装店">永红时装店</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225076" data=",,韵卓音响设备经营部">韵卓音响设备经营部</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225075" data=",,云腾飞讯电脑经营部">云腾飞讯电脑经营部</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225072" data=",,雨田电脑">雨田电脑</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225069" data=",,易达电脑">易达电脑</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225063" data=",,雅狐数码">雅狐数码</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="82225174" data=",,洋威家电经营部">洋威家电经营部</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="79324737" data=",,亿丰科技批发部">亿丰科技批发部</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225067" data=",,壹佳壹数码">壹佳壹数码</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="74793581" data=",,阳光音响器材店">阳光音响器材店</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225074" data=",,远航电脑">远航电脑</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225065" data=",,伊姿彩">伊姿彩</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225073" data=",,玉州电脑科技">玉州电脑科技</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225064" data=",,一番电脑">一番电脑</li>
+						</ol>
+					</li>
+					<li>
+						<div>Z</div>
+						<ol class="xy_dian_two_scoll_ol_boss xy_dian_two_scoll_ol_Z">
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="83284929" data=",,重庆小面">重庆小面</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225081" data=",,振华好朋友画艺">振华好朋友画艺</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225090" data=",,自由服饰">自由服饰</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225077" data=",,再回头">再回头</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225083" data=",,振业服装">振业服装</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225088" data=",,众旺电脑耗材">众旺电脑耗材</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="49867305" data=",,专营乐器鼓类狮头锣釵">专营乐器鼓类狮头锣釵</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="73929927" data=",,中维世纪(民族商场专卖店)">中维世纪(民族商场专卖店)</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225078" data=",,张罗七分妆扮民族店">张罗七分妆扮民族店</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225086" data=",,中恒电脑">中恒电脑</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="71322002" data=",,智通电器">智通电器</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225085" data=",,志宏科技">志宏科技</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225089" data=",,自然画卜">自然画卜</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225079" data=",,珍珍画廊">珍珍画廊</li>
+							<li class="shop xy_dian_two_scoll_li_eee las" shop_id="26225082" data=",,振兴电器">振兴电器</li>
+						</ol>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).on('mouseover', ".xy_dian_two_scoll_ul >li >ol >li", function(e) {
+			$('.xy_dian_two_scoll_ul >li >ol >li').addClass('xy_dian_two_scoll_li_eee');
+			$('.xy_dian_two_scoll_ul >li >ol >li').removeClass('xy_dian_two_scoll_li_blu');
+			$(this).removeClass('xy_dian_two_scoll_li_eee');
+			$(this).addClass('xy_dian_two_scoll_li_blu');
+		})
+		$(document).on('mouseout', ".xy_dian_two_scoll_ul >li >ol >li", function(e) {
+			$(this).addClass('xy_dian_two_scoll_li_eee');
+			$(this).removeClass('xy_dian_two_scoll_li_blu');
+		})
+		$('#xy_dian_two_index_ul > div').click(function() {
+			for(var i = 0; i < $('.xy_dian_two_scoll_ul >li').length; i++) {
+				if($(this).html() == $('.xy_dian_two_scoll_ul >li').eq(i).find('div').html()) {
+					var curr_hei = $('.xy_dian_two_scoll_ul >li >div').eq(i).offset().top - $('.xy_dian_two_scoll').offset().top + $(".xy_dian_two_scoll").scrollTop() - 10;
+					$(".xy_dian_two_scoll").animate({
+						'scrollTop': curr_hei
+					}, 200);
+					$('#xy_dian_two_index_ul div').css({
+						'opacity': '1'
+					})
+					$(this).css({
+						'opacity': '.5'
+					})
+				}
+			}
+		})
+		$(function() {
+			function scroll(fn) {
+				var beforeScrollTop = document.body.scrollTop || document.documentElement.scrollTop,
+					fn = fn || function() {};
+				window.addEventListener("scroll", function() {
+					var afterScrollTop = document.body.scrollTop || document.documentElement.scrollTop,
+						delta = afterScrollTop - beforeScrollTop;
+//					if(afterScrollTop == 0 || afterScrollTop == 80) {
+//						$('.box').show();//-------！！！！！！！！！！----------大于80后隐藏
+//					}
+$('.xy_dian_two_index ul div').html()
+					console.log(1)
+					if(delta === 0) return false;
+					if(afterScrollTop >= 120 && afterScrollTop != 0) {
+						fn(delta > 0 ? "down" : "up");
+					}
+					beforeScrollTop = afterScrollTop;
+				}, false);
+			}
+			scroll(function(direction) {
+				if(direction == "down") {//--------！！！！！！！！！！---------鼠标下滑
+//					$('.box').hide();
+				} else {//----------------！！！！！！！！！！！--鼠标上滑
+//					$('.box').show();
+				}
+			});
+		});
+	</script>
+
+</html>

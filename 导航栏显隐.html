@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+
+	<body style="height: 1000px;">
+		<div class="box" style="position: fixed;top: 0;height: 10px;border: 1px solid black;width: 99%;"></div>
+	</body>
+	<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			function scroll(fn) {
+				var beforeScrollTop = document.body.scrollTop || document.documentElement.scrollTop,
+					fn = fn || function() {};
+				window.addEventListener("scroll", function() {
+					var afterScrollTop = document.body.scrollTop || document.documentElement.scrollTop,
+						delta = afterScrollTop - beforeScrollTop;
+					if(afterScrollTop == 0 || afterScrollTop == 80) {
+						$('.box').show();//-------！！！！！！！！！！----------大于80后隐藏
+					}
+					if(delta === 0) return false;
+					if(afterScrollTop >= 120 && afterScrollTop != 0) {
+						fn(delta > 0 ? "down" : "up");
+					}
+					beforeScrollTop = afterScrollTop;
+				}, false);
+			}
+			scroll(function(direction) {
+				if(direction == "down") {//--------！！！！！！！！！！---------鼠标下滑
+					$('.box').hide();
+				} else {//----------------！！！！！！！！！！！--鼠标上滑
+					$('.box').show();
+				}
+			});
+		});
+	</script>
+
+</html>
